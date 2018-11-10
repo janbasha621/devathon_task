@@ -15,7 +15,7 @@
         <div class="content text-center">
             <div class="heading">
                 <div class="border"></div>
-                <p></p>
+                <h4>Add details for your products</p>
                 <br>
             </div>
         </div>
@@ -223,8 +223,8 @@
     event.preventDefault();
     var modal_body = $('.modal-body');
     modal_body.empty();
-    var id=$(this)[0].id.charAt($(this)[0].id.length-1);
-    // document.getElementById('hiddenVal').value=id;
+    var numberPattern = /\d+/g;
+    var id=$(this)[0].id.match( numberPattern )
     var title = $(this).attr("title");
     $('.modal-title').html(title);
     modal_body.append($(this).html())

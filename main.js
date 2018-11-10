@@ -30,27 +30,7 @@ $(document).on('click','#myBtn',function() {
     var title=document.getElementById("title").value
     var price=document.getElementById("price").value
     var id=+document.getElementById('hiddenVal').innerHTML;
- 
     products[id-1].title=title;
     products[id-1].price=price;
-
     productsDetails(products);
-    // modal.style.display = "none";
 }); 
-
-// var divs = document.getElementsById("title1"), i=divs.length;
-
-// console.log(i);
-
-
-// // // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
-
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-
-// // When the user clicks on the button, open the modal 
-// btn.onclick = function() {
-//     console.log("Hello world")
-//     modal.style.display = "block";
-// }
