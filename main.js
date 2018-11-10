@@ -24,7 +24,6 @@ function productsDetails(products){
     }   
 } 
 
-var modal = document.getElementById('myModal');
 
 $(document).on('click','#myBtn',function() {
     var title=document.getElementById("title").value
