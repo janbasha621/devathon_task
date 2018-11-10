@@ -1,38 +1,40 @@
 
 var products = [
-    { "title":"Product title" , "price": 0 },
-    { "title":"Product title" , "price": 0 },
-    { "title":"Product title" , "price": 0 }, 
-    { "title":"Product title" , "price": 0 }, 
-    { "title":"Product title" , "price": 0 }, 
-    { "title":"Product title" , "price": 0 },
-    { "title":"Product title" , "price": 0 }, 
-    { "title":"Product title" , "price": 0 }, 
-    { "title":"Product title" , "price": 0 }, 
-    { "title":"Product title" , "price": 0 }, 
-    { "title":"Product title" , "price": 0 }, 
-    { "title":"Product title" , "price": 0 } 
+    { "title":"Product 1" , "price": 0 },
+    { "title":"Product 2" , "price": 0 },
+    { "title":"Product 3" , "price": 0 }, 
+    { "title":"Product 4" , "price": 0 }, 
+    { "title":"Product 5" , "price": 0 }, 
+    { "title":"Product 6" , "price": 0 },
+    { "title":"Product 7" , "price": 0 }, 
+    { "title":"Product 8" , "price": 0 }, 
+    { "title":"Product 9" , "price": 0 }, 
+    { "title":"Product 10", "price": 0 }, 
+    { "title":"Product 11", "price": 0 }, 
+    { "title":"Product 12", "price": 0 } 
     ];
 
-function productsDetails(){
-for(var i=0;i<products.length;i++){
-    document.getElementById("title"+(i+1)).innerHTML=products[i].title;
-    document.getElementById("price"+(i+1)).innerHTML=products[i].price;
-    document.getElementById('attr'+(i+1)).setAttribute('title', products[i].title);
-}   
+    productsDetails(products);
+
+function productsDetails(products){
+    for(var i=0;i<products.length;i++){
+        document.getElementById("title"+(i+1)).innerHTML=products[i].title;
+        document.getElementById("price"+(i+1)).innerHTML=products[i].price;
+        document.getElementById('attr'+(i+1)).setAttribute('title', products[i].title);
+    }   
 } 
-productsDetails();
 
 var modal = document.getElementById('myModal');
 
 $(document).on('click','#myBtn',function() {
-    console.log(this);
     var title=document.getElementById("title").value
     var price=document.getElementById("price").value
-    var id=document.getElementById('hiddenVal').innerHTML;
-    console.log(title);
-    console.log(price);
-    console.log(id);
+    var id=+document.getElementById('hiddenVal').innerHTML;
+ 
+    products[id-1].title=title;
+    products[id-1].price=price;
+
+    productsDetails(products);
     // modal.style.display = "none";
 }); 
 
