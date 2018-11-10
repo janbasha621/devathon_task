@@ -208,6 +208,7 @@
                 <h3 class="modal-title"></h3>
             </div>
             <div class="modal-body">
+                <!-- <p id='hiddenVal' hidden></p> -->
             </div>
             <div class="modal-footer">
                 <!-- <button class="btn btn-default" data-dismiss="modal">Close</button> -->
@@ -222,12 +223,15 @@
     event.preventDefault();
     var modal_body = $('.modal-body');
     modal_body.empty();
+    var id=$(this)[0].id.charAt($(this)[0].id.length-1);
+    // document.getElementById('hiddenVal').value=id;
     var title = $(this).attr("title");
     $('.modal-title').html(title);
     modal_body.append($(this).html())
     modal_body.append("<br>")
     modal_body.append('<input style="width:355px" type="text" class="form-control" placeholder="Enter Product name" id="title" name="title" required="required"/>')
     modal_body.append('<input style="width:355px" type="number" class="form-control" placeholder="Enter Product price" id="price" name="price" required="required"/>')
+    modal_body.append('<p id="hiddenVal">'+ id + '</p>')
     $(".modal-profile").modal({show:true});
 });
 </script>

@@ -26,7 +26,13 @@ productsDetails();
 var modal = document.getElementById('myModal');
 
 $(document).on('click','#myBtn',function() {
-    console.log("Updated");
+    console.log(this);
+    var title=document.getElementById("title").value
+    var price=document.getElementById("price").value
+    var id=document.getElementById('hiddenVal').innerHTML;
+    console.log(title);
+    console.log(price);
+    console.log(id);
     // modal.style.display = "none";
 }); 
 
