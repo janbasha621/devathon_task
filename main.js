@@ -14,20 +14,29 @@ var products = [
     { "title":"Product title" , "price": 0 } 
     ];
 
+function productsDetails(){
 for(var i=0;i<products.length;i++){
     document.getElementById("title"+(i+1)).innerHTML=products[i].title;
     document.getElementById("price"+(i+1)).innerHTML=products[i].price;
     document.getElementById('attr'+(i+1)).setAttribute('title', products[i].title);
-}    
+}   
+} 
+productsDetails();
+
+var modal = document.getElementById('myModal');
+
+$(document).on('click','#myBtn',function() {
+    console.log("Updated");
+    // modal.style.display = "none";
+}); 
 
 // var divs = document.getElementsById("title1"), i=divs.length;
 
 // console.log(i);
 
-var modal = document.getElementById('myModal');
 
-// // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+// // // Get the button that opens the modal
+// var btn = document.getElementById("myBtn");
 
 // // Get the <span> element that closes the modal
 // var span = document.getElementsByClassName("close")[0];
@@ -37,6 +46,3 @@ var btn = document.getElementById("myBtn");
 //     console.log("Hello world")
 //     modal.style.display = "block";
 // }
-$(document).on('click','#myBtn',function() {
-    console.log("Updated");
-}); 

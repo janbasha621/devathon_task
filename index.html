@@ -211,7 +211,7 @@
             </div>
             <div class="modal-footer">
                 <!-- <button class="btn btn-default" data-dismiss="modal">Close</button> -->
-                <button type="button" id="myBtn" class="btn btn-primary">Save changes</button>
+                <button type="button" id="myBtn"  data-dismiss="modal" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
@@ -221,17 +221,17 @@
     $('a.thumb').click(function(event){
     event.preventDefault();
     var modal_body = $('.modal-body');
-    // content.empty();
+    modal_body.empty();
     var title = $(this).attr("title");
     $('.modal-title').html(title);
     modal_body.append($(this).html())
-    modal_body.append('<input type="text" class="form-control" id="title" name="title" required="required"/>')
+    modal_body.append("<br>")
+    modal_body.append('<input style="width:355px" type="text" class="form-control" placeholder="Enter Product name" id="title" name="title" required="required"/>')
+    modal_body.append('<input style="width:355px" type="number" class="form-control" placeholder="Enter Product price" id="price" name="price" required="required"/>')
     $(".modal-profile").modal({show:true});
 });
 </script>
-
 <script src="main.js"></script>
-<!-- //.modal-profile -->
 </body>
 </html>
 
