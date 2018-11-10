@@ -19,7 +19,7 @@ var products = [
 function productsDetails(products){
     for(var i=0;i<products.length;i++){
         document.getElementById("title"+(i+1)).innerHTML=products[i].title;
-        document.getElementById("price"+(i+1)).innerHTML=products[i].price;
+        document.getElementById("price"+(i+1)).innerHTML="&#8377; "+products[i].price;
         document.getElementById('attr'+(i+1)).setAttribute('title', products[i].title);
     }   
 } 
